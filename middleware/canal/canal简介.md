@@ -25,9 +25,7 @@
 - mysql slave（canal 伪装的）收到 binlog 增量日志后，就可以对这部分日志进行解析，获取主库的结构及数据变更
 
 ## **mysql 主备复制原理**
-
-
-
+![image](https://user-images.githubusercontent.com/51017390/118445300-d7a9d480-b720-11eb-84dc-457d41902d39.png)
 - mysql master 将数据变更写入二进制日志（binary log，其中记录叫做二进制日志事件 binary log events，可以通过 show binlog events 进行查看）
 - mysql slave 将 master 的 binary log events 拷贝到它的中继日志（relay log）
 - mysql slave 重放 relay log 中事件，将数据变更反映它自己的数据
